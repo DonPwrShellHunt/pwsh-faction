@@ -13,5 +13,5 @@ filter ConvertTo-SaneCounterObject {
     }
 }
 
-#define a default set of properties to the custom gitConfig type
+#define a default set of properties to the custom saneCounter type
 Update-TypeData -TypeName 'saneCounter' -DefaultDisplayPropertySet 'ComputerName', 'CounterSet', 'Counter', 'Value' -force
