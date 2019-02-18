@@ -3,11 +3,15 @@ filter ConvertTo-SaneCounterObject {
         $pathwoinstance = $cs.Path -replace '\([^\)]+\)',''
         $components = $pathwoinstance.trim('\').split('\')
         [PSCustomObject]@{
+            PSTypeName   = 'saneCounter'
             ComputerName = $components[0]
             CounterSet = $components[1]
-            CounterName = $components[2]
+            Counter = $components[2]
             Value = $cs.CookedValue
-            Date = $cs.Timestamp
+            Timestamp = $cs.Timestamp
         }
     }
 }
+
+#define a default set of properties to the custom gitConfig type
+Update-TypeData -TypeName 'saneCounter' -DefaultDisplayPropertySet 'ComputerName', 'CounterSet', 'Counter', 'Value' -force
