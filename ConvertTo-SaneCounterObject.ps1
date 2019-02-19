@@ -4,11 +4,12 @@ filter ConvertTo-SaneCounterObject {
         $components = $pathwoinstance.trim('\').split('\')
         [PSCustomObject]@{
             PSTypeName   = 'saneCounter'
+            Timestamp    = $cs.Timestamp
             ComputerName = $components[0]
-            CounterSet = $components[1]
-            Counter = $components[2]
-            Value = $cs.CookedValue
-            Timestamp = $cs.Timestamp
+            CounterSet   = $components[1]
+            Instance     = $cs.InstanceName
+            Counter      = $components[2]
+            Value        = $cs.CookedValue
         }
     }
 }
