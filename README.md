@@ -4,6 +4,8 @@ Iron scripter powershell content. The first 2019 problem is to convert the outpu
 
 This warm up challenge can be found at <https://ironscripter.us/iron-scripter-2019-is-coming/>
 
+## additional things to check
+
 TODO
 
 1. Check out running on a remote computer to see if parsing is the same
